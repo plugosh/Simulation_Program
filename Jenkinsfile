@@ -19,6 +19,7 @@ pipeline {
         }
         stage('publish') {
             steps {
+                sh chmod a+x 'Publish.sh'
                 sh 'Publish.sh'
             }
         }
