@@ -16,4 +16,4 @@ description=$(echo "$description" | sed -z 's/\n/\\n/g') # Escape line breaks to
 release=$(curl -XPOST -H "Authorization:token $token" --data "{\"tag_name\": \"$tag\", \"target_commitish\": \"main\", \"name\": \"$name\", \"body\": \"$description\", \"draft\": false, \"prerelease\": true}" https://api.github.com/repos/plugosh/Simulation_Program/releases)
 id="80360620"
 #id=$(echo "$release" | sed -n -e 's/"id":\ \([0-9]\+\),/\1/p' | head -n 1 | sed 's/[[:blank:]]//g')
-curl -XPOST -H "Authorization:token $token" -H "Content-Type:application/octet-stream" --data-binary @artifact.zip https://uploads.github.com/repos/plugosh/Simulation_Program/releases/$id/assets?name=artifact.zip
+curl -XPOST -H "Authorization:token $token" -H "Content-Type:application/octet-stream" --data-binary @artifact2.zip https://uploads.github.com/repos/plugosh/Simulation_Program/releases/$id/assets?name=artifact2.zip
