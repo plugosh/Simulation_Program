@@ -9,7 +9,7 @@ pipeline {
         }
         stage('publish') {
             steps {
-                sh 'echo my-artifact > artifact2.zip'
+                sh 'echo my-artifact > artifact.zip'
                 sh "chmod a+x ./Publish.sh"
                 sh './Publish.sh'
             }
